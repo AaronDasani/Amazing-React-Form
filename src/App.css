@@ -1,33 +1,164 @@
-.App {
-  text-align: center;
+
+body{
+    background-color: rgb(22, 22, 22);
+}
+.formContainer{
+    text-align: center;
+    margin-top: 10%;
+    /* background-color: rgba(0, 255, 98, 0.473); */
+    min-height: 100%;
+    
+}
+.formContainer>div{
+    background-image: url('./static/images/Apex-Legends-Header-Image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    position: relative;
+    left: 35%;
+    height: 600px;
+    width: 500px;
+    border-radius: 10px;
+}
+.formContainer>div>div{
+    background-color: rgba(165, 93, 0, 0.596);
+    min-height: 100%;
+    box-shadow: 0px 0px 30px rgb(8, 8, 8);
+    border-radius: 10px;
+
+}
+form{
+    position:relative;
+    top:160px;
+}
+form input{
+    width: 90%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    padding-left: 20px;
+    background-color: rgba(231, 132, 52, 0.479);
+
+}
+form span{
+    text-align: start !important;
+    display: block;
+    margin-left: 30px;
+    font-weight: bold;
+    color:rgba(255, 218, 203, 0.555);
+}
+form button{
+    border-radius: 30px;
+    border:none;
+    background-color: rgba(231, 131, 0, 0.644);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    width:90%;
+    height: 45px;
+    font-weight: bold;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+
+}
+form button:hover{
+    background-color: rgba(231, 131, 0, 0.863);
+    color: rgba(255, 255, 255, 0.856);
+    transition-duration: 0.5s;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.forgotPasswordContainer{
+    position: relative;
+    top: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgba(255, 218, 203, 0.555);
+}
+.forgotPasswordContainer small:hover{
+    cursor: pointer;
+    color:rgba(255, 218, 203, 0.685);
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* Validation Box css */
+@keyframes bounceInfoBox{
+    0%{
+        transform: scale(0.6);
+    }
+    25%{
+        transform: scale(1.1);
+    }
+    35%{
+        transform: scale(1);
+    }
+    45%{
+        transform: scale(1.05);
+    }
+    55%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.validationBox{
+    background: url('./static/images/ApexBackgroundColor.png');
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgba(87, 87, 87, 0.459);
+    position: absolute;
+    left: 102%;
+    animation-name: bounceInfoBox;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+.validationBox small{
+    display: block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nameValidationBox{
+    top: -5%;
+}
+.emailValidationBox{
+    top: 30%;
+}
+.passwordValidationBox{
+    top: 50%;
+}
+/* Info Button */
+.infoButton{
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 90%;
+}
+.infoButton i{
+    font-size: 17px;
+    color: rgba(187, 187, 187, 0.712);
+}
+.infoButton i:hover{
+    transform: scale(1.09);
+    color: rgb(180, 87, 0);
+    cursor: pointer;
+    transition-duration: 0.5s
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* Check Button for Successful Validation */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.successCheck{
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 90%;
+    font-size: 19px;
+    color: rgb(17, 146, 0);
 }
