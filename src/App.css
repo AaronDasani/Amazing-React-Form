@@ -4,7 +4,7 @@ body{
 }
 .formContainer{
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     /* background-color: rgba(0, 255, 98, 0.473); */
     min-height: 100%;
     
@@ -52,7 +52,7 @@ form span{
     font-weight: bold;
     color:rgba(255, 218, 203, 0.555);
 }
-form button{
+.BTN{
     border-radius: 30px;
     border:none;
     background-color: rgba(231, 131, 0, 0.644);
@@ -65,7 +65,7 @@ form button{
     font-size: 17px;
 
 }
-form button:hover{
+.BTN:hover{
     background-color: rgba(231, 131, 0, 0.863);
     color: rgba(255, 255, 255, 0.856);
     transition-duration: 0.5s;
@@ -161,4 +161,12 @@ form button:hover{
     left: 90%;
     font-size: 19px;
     color: rgb(17, 146, 0);
+}
+
+.Dashboard{
+    height: 100vh;
+    margin-top: 0px;
+    padding-top: 0px;
+    background-image: url("./static/images/MirageApexLegend.jpg");
+    background-size: cover;
 }

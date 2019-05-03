@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import Form from './component/form';
+import Dashboard from './component/dashboard';
 
 
 class App extends Component {
@@ -11,6 +12,10 @@ class App extends Component {
       name:"",
       email:"",
       password: "",
+      ValidationSuccess:false,
+      nameValidationSuccess: false,
+      passwordValidationSuccess: false,
+      emailValidationSuccess: false,
       activeInfo:{
         nameValidationBox:false,
         emailValidationBox:false,
@@ -33,9 +38,7 @@ class App extends Component {
           NumberIncluded:false,
         },
       },
-      nameValidationSuccess: false,
-      passwordValidationSuccess: false,
-      emailValidationSuccess: false
+    
 
     }
     this.activeInfo=this.activeInfo.bind(this);
@@ -100,6 +103,20 @@ class App extends Component {
     })
     
   }
+
+  onSubmit=(event)=>{
+    event.preventDefault();
+    if (this.state.nameValidationSuccess===true && this.state.emailValidationSuccess===true && this.state.passwordValidationSuccess===true) {
+      this.setState({ValidationSuccess:true})
+    }
+  }
+
+  SignInPage=(event)=>{
+    event.preventDefault();
+    this.setState({ValidationSuccess:false})
+    
+  }
+
   render() {
     if(this.state.nameValidationSuccess && this.state.activeInfo.nameValidationBox){
       this.activeInfo("nameValidationBox")
@@ -113,7 +130,7 @@ class App extends Component {
    
     return (
       <div>
-        <Form formState={this.state} activeInfo={this.activeInfo} onChange={this.onTextChange}/>
+        {this.state.ValidationSuccess? <Dashboard SignInPage={this.SignInPage}/>:<Form formState={this.state} activeInfo={this.activeInfo} onChange={this.onTextChange} onSubmit={this.onSubmit}/>}
       </div>
     )
   }
